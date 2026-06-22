@@ -1,0 +1,35 @@
+@reference "tailwindcss";
+
+.footer {
+  @apply w-screen h-40 bg-[#405788] relative flex flex-col;
+}
+
+.footer-para {
+  @apply flex flex-col gap-1.5 text-white text-sm items-center justify-center;
+}
+
+.footer-para p:first-child {
+  @apply mt-3;
+}
+
+.footer-links {
+  @apply flex flex-row  gap-16 items-center justify-center;
+}
+
+.make-in-india-logo {
+  @apply bg-white w-28 p-2 rounded-xl mt-4 cursor-pointer;
+}
+
+.nic-logo {
+  @apply bg-white rounded-xl mt-4 w-35 p-4 cursor-pointer;
+}
+.disclaimer {
+  @apply flex flex-row gap-4  text-white items-start justify-start ml-50 mx-10;
+}
+
+.divider {
+  @apply bg-white w-px h-5 mx-4;
+}
+.footer-link:hover {
+  @apply underline underline-offset-2;
+}

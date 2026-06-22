@@ -1,0 +1,21 @@
+@reference "tailwindcss";
+
+.disclaimer-page {
+  @apply px-4 py-8 md:px-8 lg:px-12;
+}
+
+.disclaimer-card {
+  @apply bg-white rounded-lg shadow-md border border-gray-200 p-6 md:p-8;
+}
+
+.disclaimer-heading {
+  @apply text-xl font-semibold text-[#7a0026] mb-4;
+}
+
+.disclaimer-content {
+  @apply space-y-4 mb-8 text-gray-700 leading-7 text-sm md:text-base;
+}
+
+.sub-heading {
+  @apply text-base font-semibold text-gray-900 mt-4 mb-2;
+}

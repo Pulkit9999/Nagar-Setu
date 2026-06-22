@@ -1,0 +1,7 @@
+@reference "tailwindcss";
+.home-screen {
+  @apply min-h-screen flex flex-col;
+}
+.footers {
+  @apply fixed bottom-0;
+}

@@ -1,0 +1,65 @@
+@reference "tailwindcss";
+
+.contact-page {
+  @apply w-screen p-4;
+}
+
+.contact-card {
+  @apply bg-white border border-gray-300 rounded-lg overflow-hidden shadow-2xl;
+}
+
+.contact-header {
+  @apply px-4 py-2 text-2xl font-bold text-gray-800;
+  background-color: #f3f4f6;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.contact-content {
+  @apply p-4;
+}
+
+.contact-warning {
+  @apply text-xl font-medium text-black mb-6;
+}
+
+.officers-table-wrapper {
+  @apply overflow-x-auto mb-8;
+}
+
+.officers-table {
+  @apply w-full border-collapse text-sm;
+}
+
+.officers-table th,
+.officers-table td {
+  @apply border border-gray-300 px-3 py-2 text-left;
+}
+
+.table-title-row th {
+  @apply text-center text-white font-semibold;
+  background-color: #1565d8;
+}
+
+.officers-table thead tr:nth-child(2) {
+  @apply bg-gray-100;
+}
+
+.contact-info-section {
+  @apply py-6 border-b border-gray-200;
+}
+
+.contact-info-section h4 {
+  @apply font-bold text-black mt-1;
+}
+
+.contact-info-section p {
+  @apply text-sm text-gray-800 leading-6;
+}
+
+.technical-support {
+  @apply pt-6 text-sm;
+}
+
+.technical-support span {
+  @apply ml-1 text-gray-700;
+}

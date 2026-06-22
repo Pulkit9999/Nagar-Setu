@@ -1,0 +1,41 @@
+import "../css/Navbar.css";
+import { House, Phone, Info, CircleHelp } from "lucide-react";
+import { Link } from "react-router-dom";
+const Navbar = () => {
+  return (
+    <nav className="gov-navbar">
+      <div className="gov-navbar__left">
+        <div className="gov-navbar__india">
+          <span>भारत सरकार</span>
+          <span>Government of India</span>
+        </div>
+
+        <div className="gov-navbar__divider" />
+
+        <div className="gov-navbar__ministry">
+          <span>कार्मिक, लोक शिकायत और पेंशन मंत्रालय</span>
+          <span>Ministry of Personnel, Public Grievances & Pensions</span>
+        </div>
+      </div>
+
+      <div className="gov-navbar__right">
+        <Link to="/about-us" className="nav-link">
+          <Info size={14} />
+          <span>About Us</span>
+        </Link>
+
+        <Link to="/contact-us" className="nav-link">
+        <Phone size={14} />
+        <span>Contact Us</span>
+        </Link>
+
+        <Link to="/faqs" className="nav-link">
+          <CircleHelp size={14} />
+          <span>FAQs/Help</span>
+        </Link>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

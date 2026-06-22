@@ -1,0 +1,29 @@
+@reference "tailwindcss";
+
+.topbar-right {
+  @apply flex items-center justify-end gap-2
+         bg-[#7A0048]
+         px-4 py-1;
+}
+
+.language-label {
+  @apply text-white text-sm font-medium;
+}
+
+.language-dropdown {
+  @apply h-8 px-2 text-sm
+         border border-gray-300
+         bg-white
+         outline-none;
+}
+
+.signin-btn {
+  @apply flex items-center gap-2
+         h-8 px-4
+         bg-[#E5A623]
+         text-black
+         text-sm
+         font-medium
+         hover:opacity-90
+         transition;
+}

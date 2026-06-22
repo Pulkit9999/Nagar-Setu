@@ -1,0 +1,47 @@
+@reference "tailwindcss";
+
+.about-us-page {
+  @apply px-6 py-8;
+}
+
+.about-us-container {
+  @apply max-w-287.5 mx-auto bg-white rounded-lg shadow-2xl p-8;
+}
+.about-us-heading {
+  @apply text-center text-2xl font-bold mb-8 text-gray-800;
+}
+
+.about-us-title {
+  @apply text-center text-xl font-semibold mb-8 text-gray-800;
+}
+
+.about-us-content {
+  @apply text-[15px] leading-7 text-gray-700;
+}
+
+.about-us-content p {
+  @apply mb-5;
+}
+
+.about-us-list {
+  @apply pl-6 mb-6;
+}
+
+.about-us-list li {
+  @apply list-disc mb-2;
+}
+
+.about-us-contact-heading {
+  @apply italic mt-8;
+}
+
+.about-us-contact {
+  @apply italic leading-7;
+}
+
+.about-us-disclaimer {
+  @apply mt-20 font-bold;
+}
+.about-start {
+  @apply flex items-center justify-center mt-6 font-bold text-xl;
+}

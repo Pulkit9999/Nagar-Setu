@@ -1,0 +1,21 @@
+@reference "../index.css";
+
+.splash-container {
+  @apply min-h-screen flex flex-col items-center justify-center bg-white;
+}
+
+.splash-logo {
+  @apply w-72 rounded-4xl border-4;
+}
+
+.splash-title {
+  @apply text-4xl font-bold text-blue-900 mt-4;
+}
+
+.splash-disclaimer {
+  @apply text-xs text-gray-500 text-center max-w-xl mt-8;
+}
+
+.splash-para {
+  @apply text-gray-600 mt-5 text-center font-bold h-20 w-70;
+}

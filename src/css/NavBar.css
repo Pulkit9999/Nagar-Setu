@@ -1,0 +1,63 @@
+@reference "tailwindcss";
+
+.gov-navbar {
+  @apply flex items-center justify-between
+         bg-[#7a0048]
+         text-white
+         px-6
+         py-1;
+}
+
+.gov-navbar__left {
+  @apply flex items-center;
+}
+
+.gov-navbar__india {
+  @apply flex flex-col
+         text-center gap-0.5;
+}
+
+.gov-navbar__india span:first-child {
+  @apply text-[12px] font-semibold;
+}
+
+.gov-navbar__india span:last-child {
+  @apply text-[11px];
+}
+
+.gov-navbar__divider {
+  @apply w-px
+         h-8
+         bg-white/50
+         mx-4;
+}
+
+.gov-navbar__ministry {
+  @apply flex flex-col gap-0.5;
+}
+
+.gov-navbar__ministry span:first-child {
+  @apply text-[12px] font-medium;
+}
+
+.gov-navbar__ministry span:last-child {
+  @apply text-[11px];
+}
+
+.gov-navbar__right {
+  @apply flex items-center;
+}
+
+.nav-link {
+  @apply flex items-center gap-1
+         px-4
+         text-sm
+         border-l
+         border-white/40
+         hover:bg-white/10
+         transition;
+}
+
+.nav-link:first-child {
+  @apply border-l-0;
+}
