@@ -4,7 +4,7 @@ import logo from "../assets/logo-preamble.png";
 const HeadingSection = () => {
   return (
     <>
-      <div className="heading">
+      <div className="heading-section">
         <img src={logo} alt="heading-logo" className="img-logo" />
         <div className="grievance-nagar-setu">
           <span className="text-color">NAGAR  SETU</span>

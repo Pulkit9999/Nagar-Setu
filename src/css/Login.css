@@ -1,0 +1,61 @@
+@reference "tailwindcss";
+
+.login-page {
+  @apply flex justify-center items-center py-10 px-4;
+}
+
+.login-card {
+  @apply w-full max-w-md bg-white border border-gray-300 shadow-md p-6;
+}
+
+.login-title {
+  @apply text-[#002f86] text-2xl font-bold mb-6;
+}
+
+.form-group {
+  @apply mb-4;
+}
+
+.form-group label {
+  @apply block text-sm font-medium mb-1;
+}
+
+.input-wrapper {
+  @apply relative;
+}
+
+.input-field {
+  @apply w-full border border-gray-300 px-3 py-2 bg-gray-100;
+}
+
+.input-icon {
+  @apply absolute right-3 top-1/2 -translate-y-1/2 text-gray-500;
+}
+
+.password-toggle {
+  @apply absolute right-3 top-1/2 -translate-y-1/2 text-gray-500;
+}
+
+.error-text {
+  @apply text-red-600 text-sm mt-1;
+}
+
+.login-btn {
+  @apply w-1/2 bg-[#002f86] text-white py-2 rounded-md font-semibold flex justify-center items-center gap-2 mt-8 mx-14;
+}
+
+.login-links {
+  @apply flex justify-center gap-8 mt-6 text-sm font-semibold;
+}
+
+.login-links a {
+  @apply hover:underline;
+}
+
+.signup-wrapper {
+  @apply mt-4 text-center font-semibold;
+}
+
+.signup-wrapper a {
+  @apply hover:underline;
+}

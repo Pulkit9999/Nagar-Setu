@@ -1,6 +1,6 @@
 @reference "../index.css";
 
-.heading {
+.heading-section {
   @apply flex flex-row justify-between w-screen h-28  bg-gray-100;
 }
 

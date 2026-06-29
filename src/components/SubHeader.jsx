@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
 import logo from "../assets/login-button.png";
+import { Link } from "react-router-dom";
+
 import "../css/SubHeader.css";
 const SubHeader = () => {
-   return (
+  return (
     <div className="topbar-right">
       <span className="language-label">Language :</span>
 
@@ -13,12 +15,12 @@ const SubHeader = () => {
         <option>বাংলা</option>
       </select>
 
-      <button className="signin-btn">
+      <Link to="/login" className="signin-btn">
         <span>↪</span>
         <span>Sign In</span>
-      </button>
+      </Link>
     </div>
   );
-}
+};
 
-export default SubHeader
+export default SubHeader;
