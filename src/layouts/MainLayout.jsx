@@ -8,18 +8,20 @@ import SubHeader from "../components/SubHeader";
 
 
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, showSessionTimer = true }) => {
   return (
-    <>
-     <Navbar />
-     <HeadingSection />
-     <SubHeader />
-      <main>
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <HeadingSection showSessionTimer={showSessionTimer} />
+      <SubHeader  showWelcome={showSessionTimer} />
+
+      <main className="flex-1">
         {children}
       </main>
+
       <Footer />
-    </>
+    </div>
   );
-}
+};
 
 export default MainLayout;

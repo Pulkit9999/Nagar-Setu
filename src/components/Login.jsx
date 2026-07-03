@@ -34,7 +34,7 @@ const Login = () => {
   };
 
   return (
-    <MainLayout>
+    <MainLayout showSessionTimer={false}>
       <div className="login-page">
         <div className="login-card">
           <h2 className="login-title">USER LOGIN</h2>

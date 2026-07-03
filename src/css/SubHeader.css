@@ -17,6 +17,10 @@
          outline-none;
 }
 
+.welcome-user {
+  @apply text-white font-semibold flex items-center;
+}
+
 .signin-btn {
   @apply flex items-center gap-2
          h-8 px-4

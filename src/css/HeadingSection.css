@@ -1,4 +1,4 @@
-@reference "../index.css";
+@reference "tailwindcss";
 
 .heading-section {
   @apply flex flex-row justify-between w-screen h-28  bg-gray-100;
@@ -11,10 +11,18 @@
   @apply text-white text-center mt-1 rounded-2xl bg-blue-950 font-bold p-3 w-34;
 }
 
+.session-box {
+  @apply bg-white rounded-md px-4 py-2 mr-6 h-fit mt-10
+  flex items-center gap-2 shadow-md;
+}
+
 .text-alignment {
   @apply text-left text-black font-bold mr-10;
 }
 
 .grievance-nagar-setu {
   @apply flex flex-col mt-3 gap-4;
+}
+.session-time {
+  @apply text-green-600 font-bold;
 }

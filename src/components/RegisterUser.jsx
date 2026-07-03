@@ -16,7 +16,7 @@ const RegisterUser = () => {
     watch,
     formState: { errors },
   } = useForm();
-
+  const navigate = useNavigate();
   const onSubmit = async (data) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
@@ -57,14 +57,14 @@ const RegisterUser = () => {
       console.log(error.message);
     }
   };
-  const navigate = useNavigate();
+  
   const selectedState = watch("state");
   const districts = selectedState
     ? districtMasterData[selectedState] || []
     : [];
 
   return (
-    <MainLayout>
+    <MainLayout  showSessionTimer={false}>
       <div>
         <div className="registration-heading">
           <h1>Registration / Sign up Form</h1>
