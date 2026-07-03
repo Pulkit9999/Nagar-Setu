@@ -1,11 +1,11 @@
 @reference "tailwindcss";
 
 .main-dashboard-container {
-  @apply w-screen mt-3 flex bg-gray-200 min-h-screen;
+  @apply w-screen mt-3 flex flex-row gap-4  bg-gray-200 min-h-screen;
 }
 
 .dashboard-sidebar {
-  @apply w-64 bg-blue-900 mb-8 ml-2 mt-5 h-120 flex flex-col rounded-3xl;
+  @apply w-64 bg-blue-900 mb-8 ml-4 mt-5 h-110 flex flex-col rounded-3xl;
 }
 
 .dashboard-heading {
@@ -19,4 +19,35 @@
 }
 #list-sign-out {
   @apply font-bold text-amber-600;
+}
+.dashboard-chatbot {
+  @apply flex flex-row gap-4 mt-8 bg-amber-100;
+}
+
+.chatbot-pic {
+  @apply flex flex-col gap-3;
+}
+.chatbot-pic p {
+  @apply font-bold text-sm text-black ml-2;
+}
+#chatbot-logo {
+  @apply w-32 h-32 mt-2;
+}
+
+.speak-your-grievance {
+  @apply flex flex-col gap-10 mt-4;
+}
+
+.speak-your-grievance p {
+  @apply font-bold text-sm text-black;
+}
+
+.speak-your-grievance h1 {
+  @apply font-bold;
+}
+.grievances-details {
+  @apply w-full bg-gray-200 flex flex-col;
+}
+.complaints-cards {
+  @apply flex flex-row gap-6 w-full m-6 rounded-3xl bg-white h-54;
 }

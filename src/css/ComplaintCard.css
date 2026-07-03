@@ -1,0 +1,21 @@
+@reference "tailwindcss";
+
+.card-container {
+  @apply flex flex-col w-70 h-41 m-4 shadow-xl rounded-2xl;
+}
+
+.image-and-count {
+  @apply flex flex-row items-center px-10 gap-10 w-70 h-80 border-b mt-4;
+}
+.image-container {
+  @apply flex  items-center justify-center w-20 h-20 rounded-full border-2 border-white;
+}
+#complaint-logo {
+  @apply w-[60px] h-[70px] p-2;
+}
+.card-footer {
+  @apply p-3 font-bold text-white;
+}
+.complaints-count {
+  @apply font-bold text-white text-3xl;
+}
