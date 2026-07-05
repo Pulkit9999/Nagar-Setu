@@ -11,6 +11,10 @@ import WebsitePolicies from "./components/WebsitePolicies";
 import Login from "./components/Login";
 import { ToastContainer } from "react-toastify";
 import UserDashboard from "./components/UserDashboard";
+import NewGrievance from "./components/NewGrievance";
+import SelectMinistryPage from "./components/SelectMinistryPage";
+import GrievanceRegistrationForm from "./components/GrievanceRegistrationForm";
+
 
 function App() {
   return (
@@ -25,9 +29,15 @@ function App() {
         <Route path="/disclaimer" element={<DisclaimerSection />} />
         <Route path="/website-policies" element={<WebsitePolicies />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/user-dashboard" element={<UserDashboard/>} />
-        </Routes>
-        <ToastContainer position="bottom-center" autoClose={2000} />
+        <Route path="/user-dashboard" element={<UserDashboard />} />
+        <Route path="/new-grievance" element={<NewGrievance />} />
+        <Route
+          path="/new-grievance/organization"
+          element={<SelectMinistryPage />}
+        />
+          <Route path="/new-grievance/organization/grievance-registration-form/:ministry?" element={<GrievanceRegistrationForm />} />
+      </Routes>
+      <ToastContainer position="bottom-center" autoClose={2000} />
     </BrowserRouter>
   );
 }

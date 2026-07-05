@@ -1,0 +1,119 @@
+@reference "tailwindcss";
+
+/* Outer wrapper */
+
+.new-grievance-page {
+  @apply flex justify-center px-6 py-5;
+}
+
+.lodge-grievance-layout {
+  @apply flex gap-5 p-5 bg-gray-200 min-h-screen;
+}
+
+/* Main card */
+
+.new-grievance-card {
+  @apply w-full
+         max-w-6xl
+         bg-white
+         rounded-2xl
+         shadow-xl
+         p-7;
+}
+
+/* Heading */
+
+.new-grievance-title {
+  @apply text-4xl
+         font-bold
+         text-gray-900
+         mb-8;
+}
+
+/* Red heading */
+
+.new-grievance-subtitle {
+  @apply text-red-600
+         text-2xl
+         font-semibold
+         mb-6;
+}
+
+/* Bullet List */
+
+.grievance-list {
+  @apply list-disc
+         pl-8
+         space-y-3
+         text-lg
+         text-gray-800
+         leading-8;
+}
+
+.grievance-list li::marker {
+  color: #66004d;
+  font-size: 1.1rem;
+}
+
+.grievance-link {
+  @apply text-blue-600 cursor-pointer;
+}
+
+/* Yellow Information Box */
+
+.grievance-note {
+  @apply mt-8
+         bg-yellow-50
+         border
+         border-yellow-300
+         rounded-lg
+         px-6
+         py-5
+         text-yellow-900
+         text-lg
+         leading-8;
+}
+
+/* Checkbox */
+
+.undertaking-container {
+  @apply flex
+         items-start
+         gap-4
+         mt-8
+         text-lg
+         font-semibold
+         cursor-pointer;
+}
+
+.undertaking-container input {
+  @apply mt-1
+         w-6
+         h-6;
+}
+
+/* Button */
+
+.submit-btn-container {
+  @apply flex
+         justify-center
+         mt-8;
+}
+
+.grievance-submit-btn {
+  @apply bg-[#002f86]
+         text-white
+         px-8
+         py-3
+         rounded-md
+         text-lg
+         font-medium
+         hover:bg-[#001f5f]
+         transition-all
+         duration-200
+         flex items-center justify-center gap-4;
+}
+
+.grievance-note2 {
+  @apply font-bold m-2 text-black;
+}

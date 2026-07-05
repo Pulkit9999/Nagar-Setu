@@ -1,7 +1,7 @@
 @reference "tailwindcss";
 
 .card-container {
-  @apply flex flex-col w-70 h-41 m-4 shadow-xl rounded-2xl;
+  @apply flex flex-col w-70 h-41 m-4 shadow-2xl rounded-2xl;
 }
 
 .image-and-count {

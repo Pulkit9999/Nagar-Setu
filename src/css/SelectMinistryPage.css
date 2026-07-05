@@ -1,0 +1,7 @@
+@reference "tailwindcss";
+
+.select-ministry-layout {
+  @apply flex
+         bg-gray-200
+         min-h-screen;
+}

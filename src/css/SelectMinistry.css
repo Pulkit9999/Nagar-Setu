@@ -1,0 +1,86 @@
+@reference "tailwindcss";
+
+/* Right Content */
+
+.select-ministry-page {
+  @apply flex-1
+         bg-gray-200
+         p-5;
+}
+
+/* White Card */
+
+.select-ministry-card {
+  @apply bg-white
+         rounded-2xl
+         shadow-xl
+         p-5;
+}
+
+/* Heading */
+
+.select-ministry-heading {
+  @apply text-2xl
+         font-bold
+         text-gray-900
+         mb-7;
+}
+
+/* Grid */
+
+.ministry-grid {
+  @apply grid
+         grid-cols-5
+         gap-7;
+}
+
+/* Card */
+
+.ministry-item {
+  @apply border
+         border-gray-300
+         rounded-md
+         overflow-hidden
+         shadow-md
+         cursor-pointer
+         transition-all
+         duration-300
+         hover:shadow-xl
+         hover:-translate-y-1;
+}
+
+/* Upper Portion */
+
+.ministry-image-container {
+  @apply h-40
+         bg-slate-200
+         flex
+         justify-center
+         items-center;
+}
+
+/* Icon */
+
+.ministry-icon {
+  @apply text-7xl
+         text-[#2a4e86];
+}
+
+/* Footer */
+
+.ministry-footer {
+  @apply h-20
+         bg-[#234f8e]
+         flex
+         justify-center
+         items-center
+         px-3;
+}
+
+.ministry-footer p {
+  @apply text-white
+         text-center
+         font-semibold
+         text-lg
+         leading-6;
+}
