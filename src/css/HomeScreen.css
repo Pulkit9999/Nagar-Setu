@@ -5,3 +5,6 @@
 .footers {
   @apply fixed bottom-0;
 }
+.banner-image {
+  @apply w-full;
+}
