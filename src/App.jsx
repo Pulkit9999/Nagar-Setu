@@ -14,6 +14,7 @@ import UserDashboard from "./components/UserDashboard";
 import NewGrievance from "./components/NewGrievance";
 import SelectMinistryPage from "./components/SelectMinistryPage";
 import GrievanceRegistrationForm from "./components/GrievanceRegistrationForm";
+import ReviewGrievance from "./components/ReviewGrievance";
 
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
           element={<SelectMinistryPage />}
         />
           <Route path="/new-grievance/organization/grievance-registration-form/:ministry?" element={<GrievanceRegistrationForm />} />
+
+          <Route path="/new-grievance/review-grievance" element={< ReviewGrievance/>} />
       </Routes>
       <ToastContainer position="bottom-center" autoClose={2000} />
     </BrowserRouter>
