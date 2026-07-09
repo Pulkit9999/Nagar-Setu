@@ -2,13 +2,21 @@ import MainLayout from "../layouts/MainLayout";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { FaUser, FaEye, FaEyeSlash, FaSignInAlt } from "react-icons/fa";
+import {
+  FaUser,
+  FaEye,
+  FaEyeSlash,
+  FaSignInAlt,
+  FaSpinner,
+} from "react-icons/fa";
 import "../css/Login.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [loginError, setLoginError] = useState("");
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
@@ -16,6 +24,8 @@ const Login = () => {
   } = useForm();
   const navigate = useNavigate();
   const onSubmit = async (data) => {
+    setLoginError(""); // Clear previous error
+    setLoading(true);
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
@@ -26,10 +36,18 @@ const Login = () => {
       const user = userCredential.user;
 
       setTimeout(() => {
-        navigate("/user-dashboard");
-      }, 2000);
+        navigate("/user-dashboard", { replace: true });
+      }, 1500);
     } catch (error) {
-      console.log(error.message);
+      if (
+        error.code === "auth/invalid-credential" ||
+        error.code === "auth/wrong-password" ||
+        error.code === "auth/user-not-found"
+      ) {
+        setLoginError("Invalid Login Credentials . ");
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -101,9 +119,19 @@ const Login = () => {
               )}
             </div>
 
-            <button className="login-btn" type="submit">
-              Login <FaSignInAlt />
+            <button className="login-btn" type="submit" disabled={loading}>
+              {loading ? (
+                <>
+                  <FaSpinner className="spinner-icon" />
+                  Please wait...
+                </>
+              ) : (
+                <>
+                  Login <FaSignInAlt />
+                </>
+              )}
             </button>
+            {loginError && <p className="loginErrorMessage">{loginError}</p>}
           </form>
 
           <div className="login-links">

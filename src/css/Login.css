@@ -43,11 +43,16 @@
 .login-btn {
   @apply w-1/2 bg-[#002f86] text-white py-2 rounded-md font-semibold flex justify-center items-center gap-2 mt-8 mx-14;
 }
-
-.login-links {
-  @apply flex justify-center gap-8 mt-6 text-sm font-semibold;
+.loginErrorMessage {
+  @apply text-red-600 text-sm mt-4 ml-10;
 }
 
+.login-links {
+  @apply flex items-center justify-between gap-8 mt-8 text-sm font-semibold;
+}
+.spinner-icon {
+  @apply animate-spin mr-2;
+}
 .login-links a {
   @apply hover:underline;
 }

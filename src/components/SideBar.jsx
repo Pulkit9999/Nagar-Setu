@@ -1,10 +1,25 @@
 
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import logo from "../assets/samadhan-didi.png";
+import { signOut } from "firebase/auth";
+ import { auth } from "../utils/firebase";
 import "../css/SideBar.css"
 import { FaPlusCircle, FaUserEdit, FaKey, FaSignOutAlt } from "react-icons/fa";
 const SideBar = () => {
+   const navigate = useNavigate();
+    const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+
+      navigate("/login");
+
+    } catch (error) {
+      console.log("Sign out error:", error.message);
+    }
+  };
+
+
   return (
     <div>
        <div className="dashboard-sidebar">
@@ -29,10 +44,13 @@ const SideBar = () => {
               </Link>
             </li>
             <li className="list-items">
-              <Link to="" className="grievance-items">
-                <FaSignOutAlt />
-                <span id="list-sign-out">Sign Out</span>
-              </Link>
+              <button 
+              onClick={handleSignOut} 
+              className="grievance-items"
+            >
+              <FaSignOutAlt />
+              <span id="list-sign-out">Sign Out</span>
+            </button>
             </li>
             <li></li>
           </ul>

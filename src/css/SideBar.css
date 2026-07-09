@@ -18,6 +18,14 @@
 .grievance-items {
   @apply text-white flex items-center gap-2 p-2;
 }
+button.grievance-items {
+  @apply flex items-center gap-3 w-full bg-transparent border-none cursor-pointer text-left;
+  @apply transition duration-200 ease-in-out;
+}
+
+button.grievance-items:hover {
+  @apply underline text-white;
+}
 
 .dashboard-chatbot {
   @apply flex flex-row gap-4 mt-8 bg-amber-100;

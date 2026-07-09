@@ -16,29 +16,86 @@ import SelectMinistryPage from "./components/SelectMinistryPage";
 import GrievanceRegistrationForm from "./components/GrievanceRegistrationForm";
 import ReviewGrievance from "./components/ReviewGrievance";
 
-
+import ProtectedRoute from "./components/ProtectedRoutes";
+import PublicRoute from "./components/PublicRoutes";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SplashScreen />} />
-        <Route path="/register-user" element={<RegisterUser />} />
-        <Route path="/home-screen" element={<HomeScreen />} />
+        <Route
+          path="/register-user"
+          element={
+            <PublicRoute>
+              <RegisterUser />
+            </PublicRoute>
+          }
+        />
+
+        <Route
+          path="/home-screen"
+          element={
+            <PublicRoute>
+              <HomeScreen />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/disclaimer" element={<DisclaimerSection />} />
         <Route path="/website-policies" element={<WebsitePolicies />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/user-dashboard" element={<UserDashboard />} />
-        <Route path="/new-grievance" element={<NewGrievance />} />
+        <Route
+          path="/user-dashboard"
+          element={
+            <ProtectedRoute>
+              <UserDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/new-grievance"
+          element={
+            <ProtectedRoute>
+              <NewGrievance />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/new-grievance/organization"
-          element={<SelectMinistryPage />}
+          element={
+            <ProtectedRoute>
+              <SelectMinistryPage />
+            </ProtectedRoute>
+          }
         />
-          <Route path="/new-grievance/organization/grievance-registration-form/:ministry?" element={<GrievanceRegistrationForm />} />
 
-          <Route path="/new-grievance/review-grievance" element={< ReviewGrievance/>} />
+        <Route
+          path="/new-grievance/organization/grievance-registration-form/:ministry?"
+          element={
+            <ProtectedRoute>
+              <GrievanceRegistrationForm />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/new-grievance/review-grievance"
+          element={
+            <ProtectedRoute>
+              <ReviewGrievance />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
       <ToastContainer position="bottom-center" autoClose={2000} />
     </BrowserRouter>
