@@ -38,7 +38,7 @@ const SideBar = () => {
               </Link>
             </li>
             <li className="list-items">
-              <Link to="" className="grievance-items">
+              <Link to="/forgot-password" className="grievance-items">
                 <FaUserEdit />
                 Change Password
               </Link>

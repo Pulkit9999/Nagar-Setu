@@ -135,8 +135,8 @@ const Login = () => {
           </form>
 
           <div className="login-links">
-            <a href="/">Forgot Password</a>
-            <a href="/">Forgot Username</a>
+            <Link to ="/forgot-username">Forgot Email</Link>
+            <Link to ="/forgot-password">Forgot Password</Link>
           </div>
 
           <div className="signup-wrapper">

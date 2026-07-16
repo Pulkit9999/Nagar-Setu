@@ -18,6 +18,8 @@ import ReviewGrievance from "./components/ReviewGrievance";
 
 import ProtectedRoute from "./components/ProtectedRoutes";
 import PublicRoute from "./components/PublicRoutes";
+import ForgotUsername from "./components/ForgotUsername";
+import ForgotPassword from "./components/ForgotPassword";
 function App() {
   return (
     <BrowserRouter>
@@ -96,6 +98,8 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/forgot-username" element={<ForgotUsername />} /> 
+         <Route path="/forgot-password" element={<ForgotPassword />} /> 
       </Routes>
       <ToastContainer position="bottom-center" autoClose={2000} />
     </BrowserRouter>
