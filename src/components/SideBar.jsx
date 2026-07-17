@@ -32,7 +32,7 @@ const SideBar = () => {
               </Link>
             </li>
             <li className="list-items">
-              <Link to="" className="grievance-items">
+              <Link to="/edit-profile" className="grievance-items">
                 <FaUserEdit />
                 Edit Profile
               </Link>

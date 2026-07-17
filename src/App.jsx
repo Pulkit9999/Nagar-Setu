@@ -20,6 +20,7 @@ import ProtectedRoute from "./components/ProtectedRoutes";
 import PublicRoute from "./components/PublicRoutes";
 import ForgotUsername from "./components/ForgotUsername";
 import ForgotPassword from "./components/ForgotPassword";
+import EditProfile from "./components/EditProfile";
 function App() {
   return (
     <BrowserRouter>
@@ -99,7 +100,8 @@ function App() {
           }
         />
         <Route path="/forgot-username" element={<ForgotUsername />} /> 
-         <Route path="/forgot-password" element={<ForgotPassword />} /> 
+        <Route path="/forgot-password" element={<ForgotPassword />} /> 
+        <Route path="/edit-profile" element={<EditProfile />} />
       </Routes>
       <ToastContainer position="bottom-center" autoClose={2000} />
     </BrowserRouter>

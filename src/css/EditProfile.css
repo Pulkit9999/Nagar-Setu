@@ -1,0 +1,60 @@
+@reference "../index.css";
+
+.edit-profile-page {
+  @apply w-full bg-gray-100 py-10 px-5 flex justify-center;
+}
+
+.edit-profile-container {
+  @apply w-full max-w-5xl rounded-xl bg-white p-8;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.edit-profile-heading {
+  @apply text-center text-3xl font-semibold text-[#003366] mb-8;
+}
+
+.edit-profile-grid {
+  @apply grid grid-cols-2 gap-6;
+}
+
+.form-group {
+  @apply flex flex-col;
+}
+
+.form-group label {
+  @apply mb-2 text-[15px] font-semibold text-gray-700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  @apply w-full rounded-md border border-gray-300 px-4 py-3 text-[15px] outline-none transition-all duration-200;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  @apply border-[#003366];
+}
+
+.form-group textarea {
+  @apply resize-none;
+}
+
+.full-width {
+  @apply col-span-2;
+}
+
+.button-container {
+  @apply mt-8 flex justify-center;
+}
+
+.update-btn {
+  @apply rounded-md bg-[#003366] px-8 py-3 text-white font-medium transition-all duration-200 cursor-pointer;
+}
+
+.update-btn:hover {
+  @apply bg-[#014a93];
+}
