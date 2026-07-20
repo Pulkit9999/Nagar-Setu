@@ -13,7 +13,9 @@ import "../css/Login.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+import {useTranslation } from "react-i18next";
 const Login = () => {
+  const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -34,10 +36,19 @@ const Login = () => {
       );
 
       const user = userCredential.user;
+      if (user) {
+        const justRegistered = sessionStorage.getItem("justRegistered");
 
-      setTimeout(() => {
-        navigate("/user-dashboard", { replace: true });
-      }, 1500);
+        if (justRegistered) {
+          sessionStorage.removeItem("justRegistered");
+          return;
+        }
+
+        navigate("/user-dashboard");
+      }
+      // setTimeout(() => {
+      //   navigate("/user-dashboard", { replace: true });
+      // }, 3000);
     } catch (error) {
       if (
         error.code === "auth/invalid-credential" ||
@@ -55,22 +66,20 @@ const Login = () => {
     <MainLayout showSessionTimer={false}>
       <div className="login-page">
         <div className="login-card">
-          <h2 className="login-title">USER LOGIN</h2>
+          <h2 className="login-title">{t("login")}</h2>
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
-              <label>Select preferred Language:</label>
+              <label>{t("selectPreferredLanguage")}:</label>
 
               <select className="input-field" {...register("language")}>
-                <option value="English">English</option>
-                <option value="Hindi">Hindi</option>
-                <option value="Punjabi">Punjabi</option>
-                <option value="Bangla">Bangla</option>
+                <option value="English">{t("English")}</option>
+                <option value="Hindi">{t("Hindi")}</option>
               </select>
             </div>
 
             <div className="form-group">
-              <label>Email Id</label>
+              <label>{t("emailId")}</label>
 
               <div className="input-wrapper">
                 <input
@@ -93,7 +102,7 @@ const Login = () => {
             </div>
 
             <div className="form-group">
-              <label>Password</label>
+              <label>{t("password")}</label>
 
               <div className="input-wrapper">
                 <input
@@ -123,11 +132,11 @@ const Login = () => {
               {loading ? (
                 <>
                   <FaSpinner className="spinner-icon" />
-                  Please wait...
+                  {t("pleaseWait")}
                 </>
               ) : (
                 <>
-                  Login <FaSignInAlt />
+                  {t("login")} <FaSignInAlt />
                 </>
               )}
             </button>
@@ -135,12 +144,12 @@ const Login = () => {
           </form>
 
           <div className="login-links">
-            <Link to ="/forgot-username">Forgot Email</Link>
-            <Link to ="/forgot-password">Forgot Password</Link>
+            <Link to="/forgot-username">{t("forgotEmail")}</Link>
+            <Link to="/forgot-password">{t("forgotPassword")}</Link>
           </div>
 
           <div className="signup-wrapper">
-            <Link to="/register-user">Click here to sign up</Link>
+            <Link to="/register-user">{t("clickHereToSignUp")}</Link>
           </div>
         </div>
       </div>

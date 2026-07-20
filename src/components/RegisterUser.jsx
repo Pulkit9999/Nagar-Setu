@@ -3,13 +3,14 @@ import "../css/RegisterUser.css";
 import { stateMasterData } from "../data/statesMasterData";
 import { useForm } from "react-hook-form";
 import { districtMasterData } from "../data/districtsMasterData";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth, db } from "../utils/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
+import i18n from "../localizations/i18n";
 const RegisterUser = () => {
+  const {t}  = useTranslation();
   const {
     register,
     handleSubmit,
@@ -48,8 +49,11 @@ const RegisterUser = () => {
 
         email: data.email,
       });
-
-      toast.success("Registration Successful 🎉");
+      // Firebase automatically logs in the newly registered user.
+      // Logout the user before redirecting to login page.
+      sessionStorage.setItem("justRegistered", "true");
+      await signOut(auth);
+      toast.success(`${t("registrationSuccessful")} 🎉`);
       setTimeout(() => {
         navigate("/login");
       }, 2000);
@@ -57,32 +61,30 @@ const RegisterUser = () => {
       console.log(error.message);
     }
   };
-  
+
   const selectedState = watch("state");
   const districts = selectedState
     ? districtMasterData[selectedState] || []
     : [];
 
   return (
-    <MainLayout  showSessionTimer={false}>
+    <MainLayout showSessionTimer={false}>
       <div>
         <div className="registration-heading">
-          <h1>Registration / Sign up Form</h1>
+          <h1>{t("registrationSignUpForm")}</h1>
         </div>
 
         <div className="enter-details-header">
-          <h1 className="details-header"> Enter your details</h1>
-          <p className="details-para">
-            Fields marked with <span className="asterisk-color">*</span> are
-            mandatory
-          </p>
+          <h1 className="details-header"> {t("enterYourDetails")}</h1>
+          <p className="details-para">{t("mandatoryFields")}</p>
         </div>
 
         <div className="main-grid-container">
           <div className="left-section">
             <div className="form-group">
               <label className="form-label">
-                Name <span className="asterisk-color">*</span>
+                {t("fullName")}
+                <span className="asterisk-color">*</span>
               </label>
 
               <input
@@ -105,7 +107,8 @@ const RegisterUser = () => {
 
             <div className="form-group">
               <label className="form-label">
-                Address <span className="asterisk-color">*</span>
+                {t("address")}
+                <span className="asterisk-color">*</span>
               </label>
 
               <textarea
@@ -123,7 +126,7 @@ const RegisterUser = () => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Locality</label>
+              <label className="form-label">{t("locality")}</label>
 
               <input
                 type="text"
@@ -135,7 +138,7 @@ const RegisterUser = () => {
 
             <div className="form-group">
               <label className="form-label">
-                State <span className="asterisk-color">*</span>
+                {t("state")} <span className="asterisk-color">*</span>
               </label>
 
               <select
@@ -159,7 +162,7 @@ const RegisterUser = () => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Pincode</label>
+              <label className="form-label">{t("pincode")}</label>
 
               <input
                 type="text"
@@ -180,7 +183,8 @@ const RegisterUser = () => {
 
             <div className="form-group">
               <label className="form-label">
-                Password<span className="asterisk-color"> *</span>
+                {t("password")}
+                <span className="asterisk-color"> *</span>
               </label>
 
               <input
@@ -201,7 +205,7 @@ const RegisterUser = () => {
           <div className="right-section">
             <div className="form-group">
               <label className="form-label">
-                Gender <span className="asterisk-color">*</span>
+                {t("gender")} <span className="asterisk-color">*</span>
               </label>
 
               <select
@@ -222,7 +226,7 @@ const RegisterUser = () => {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Sub Locality</label>
+              <label className="form-label">{t("subLocality")}</label>
 
               <input
                 type="text"
@@ -234,7 +238,7 @@ const RegisterUser = () => {
 
             <div className="form-group">
               <label className="form-label">
-                Country <span className="asterisk-color">*</span>
+                {t("country")} <span className="asterisk-color">*</span>
               </label>
 
               <input
@@ -248,7 +252,7 @@ const RegisterUser = () => {
 
             <div className="form-group">
               <label className="form-label">
-                District <span className="asterisk-color">*</span>
+                {t("district")} <span className="asterisk-color">*</span>
               </label>
 
               <select
@@ -276,7 +280,8 @@ const RegisterUser = () => {
 
             <div className="form-group">
               <label className="form-label">
-                Mobile Number <span className="asterisk-color">*</span>
+                {t("mobileNumber")}
+                <span className="asterisk-color">*</span>
               </label>
 
               <input
@@ -299,7 +304,7 @@ const RegisterUser = () => {
 
             <div className="form-group">
               <label className="form-label">
-                Email Address <span className="asterisk-color">*</span>
+                {t("emailAddress")} <span className="asterisk-color">*</span>
               </label>
 
               <input
@@ -328,7 +333,7 @@ const RegisterUser = () => {
             className="submit-btn"
             onClick={handleSubmit(onSubmit)}
           >
-            Submit
+            {t("submit")}
           </button>
         </div>
       </div>

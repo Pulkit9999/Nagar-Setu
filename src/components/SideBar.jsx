@@ -5,8 +5,13 @@ import logo from "../assets/samadhan-didi.png";
 import { signOut } from "firebase/auth";
  import { auth } from "../utils/firebase";
 import "../css/SideBar.css"
+import { useTranslation } from "react-i18next";
 import { FaPlusCircle, FaUserEdit, FaKey, FaSignOutAlt } from "react-icons/fa";
 const SideBar = () => {
+    const { t } = useTranslation();
+  const changeLanguage = (language)=>{
+  i18n.changeLanguage(language);
+}
    const navigate = useNavigate();
     const handleSignOut = async () => {
     try {
@@ -23,24 +28,24 @@ const SideBar = () => {
   return (
     <div>
        <div className="dashboard-sidebar">
-          <h1 className="dashboard-heading">Grievance Dashboard</h1>
+          <h1 className="dashboard-heading">{t("grievanceDashboard")}</h1>
           <ul>
             <li className="list-items">
               <Link to="/new-grievance" className="grievance-items">
                 <FaPlusCircle />
-                Lodge Public Grievance
+                {t("lodgePublicGrievance")}
               </Link>
             </li>
             <li className="list-items">
               <Link to="/edit-profile" className="grievance-items">
                 <FaUserEdit />
-                Edit Profile
+                {t("editProfile")}
               </Link>
             </li>
             <li className="list-items">
               <Link to="/forgot-password" className="grievance-items">
                 <FaUserEdit />
-                Change Password
+                {t("changePassword")}
               </Link>
             </li>
             <li className="list-items">
@@ -49,7 +54,7 @@ const SideBar = () => {
               className="grievance-items"
             >
               <FaSignOutAlt />
-              <span id="list-sign-out">Sign Out</span>
+              <span id="list-sign-out">{t("signOut")}</span>
             </button>
             </li>
             <li></li>
@@ -60,16 +65,16 @@ const SideBar = () => {
                 <img id="chatbot-logo" src={logo} alt="chatbot-pic" />
               </Link>
               <Link to="https://cpgramsaichatbot.com/">
-                <p>Samadhan Didi</p>
+                <p>{t("samadhanDidi")}</p>
               </Link>
             </div>
 
             <div className="speak-your-grievance">
               <Link to="https://cpgramsaichatbot.com/">
-                <p>Speak Your Grievance</p>
+                <p>{t("speakGrievance")}</p>
               </Link>
               <Link to="https://cpgramsaichatbot.com/">
-                <h1>AI Chatbot</h1>
+                <h1>{t("aiChatbot")}</h1>
               </Link>
             </div>
           </div>

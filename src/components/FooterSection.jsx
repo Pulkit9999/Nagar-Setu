@@ -3,15 +3,16 @@ import "../css/FooterSection.css";
 import nic from "../assets/nic.svg";
 import makeIndia from "../assets/make-in-india-logo.png";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const Footer = () => {
+ const { t } = useTranslation();
   return (
     <div className="footer">
       <div className="footer-para">
         <p>
-          Portal is Compatible with all major Browsers like Google Chrome,
-          Mozilla Firefox, Microsoft Edge, Safari etc.
+         {t("portalCompatibility")}
         </p>
-        <p>Best Viewed in 1440 x 900 resolution</p>
+        <p>{t("bestViewedIn")}</p>
       </div>
 
       <div className="footer-links">
@@ -33,10 +34,10 @@ const Footer = () => {
       </div>
 
       <div className="disclaimer">
-       <b> <Link to="/disclaimer" className="footer-link">Disclaimer</Link></b>
+       <b> <Link to="/disclaimer" className="footer-link">{t("disclaimer")}</Link></b>
        <div className="divider"></div>
       
-        <b> <Link to="/website-policies" className="footer-link">Website Policies</Link></b>
+        <b> <Link to="/website-policies" className="footer-link">{t("websitePolicies")}</Link></b>
       </div>
     </div>
   );

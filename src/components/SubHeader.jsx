@@ -4,7 +4,13 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "../utils/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import "../css/SubHeader.css";
+import { useTranslation } from "react-i18next";
+import i18n from "../localizations/i18n";
 const SubHeader = ({ showWelcome = true }) => {
+  const { t } = useTranslation();
+  const changeLanguage = (language)=>{
+  i18n.changeLanguage(language);
+}
   const [username, setUsername] = useState(null);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -26,19 +32,19 @@ const SubHeader = ({ showWelcome = true }) => {
 
   return (
     <div className="topbar-right">
-      <span className="language-label">Language :</span>
+      <span className="language-label">{t("language")} :</span>
 
-      <select className="language-dropdown">
-        <option>English</option>
-        <option>हिन्दी</option>
+      <select className="language-dropdown"  onChange={(e)=>changeLanguage(e.target.value)}>
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
       </select>
 
       {showWelcome && username ? (
-        <span className="welcome-user">Welcome : {username}</span>
+        <span className="welcome-user">{t("welcome")} : {username}</span>
       ) : (
         <Link to="/login" className="signin-btn">
           <span>↪</span>
-          <span>Sign In</span>
+          <span>{t("signIn")}</span>
         </Link>
       )}
     </div>

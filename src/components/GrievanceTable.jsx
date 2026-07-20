@@ -10,10 +10,10 @@ import {
 } from "@tanstack/react-table";
 
 import "../css/GrievanceTable.css";
-
+import { useTranslation } from "react-i18next";
 
 const GrievanceTable = ({ grievances }) => {
-
+   const {t} = useTranslation();
   const [globalFilter, setGlobalFilter] = useState("");
 
   const [sorting, setSorting] = useState([]);
@@ -54,13 +54,13 @@ const GrievanceTable = ({ grievances }) => {
 
     {
       accessorKey:"registrationNumber",
-      header:"Registration Number"
+      header:t("registrationNumber")
     },
 
 
     {
       accessorKey:"createdAt",
-      header:"Received Date",
+      header:t("receivedDate"),
 
       cell:({row})=>(
         formatDate(row.original.createdAt)
@@ -69,8 +69,8 @@ const GrievanceTable = ({ grievances }) => {
 
 
     {
-      accessorKey:"remarks",
-      header:"Grievance Description",
+      accessorKey:"Remarks",
+      header:t("remarks"),
 
 
       cell:({row})=>{
@@ -133,7 +133,7 @@ const GrievanceTable = ({ grievances }) => {
     {
       accessorKey:"status",
 
-      header:"Status",
+      header:t("status"),
 
 
       cell:({row})=>{
@@ -257,7 +257,7 @@ const GrievanceTable = ({ grievances }) => {
 
 
         <h2>
-          My Grievances
+          {t("myGrievances")}
         </h2>
 
 
@@ -266,7 +266,7 @@ const GrievanceTable = ({ grievances }) => {
 
         type="text"
 
-        placeholder="Search grievances..."
+        placeholder={t("searchGrievances")}
 
         value={globalFilter}
 

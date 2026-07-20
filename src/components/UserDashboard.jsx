@@ -11,16 +11,13 @@ import GrievanceTable from "./GrievanceTable";
 import logo2 from "../assets/total_grievances_registered.png";
 import logo3 from "../assets/pending_grievances.png";
 import logo4 from "../assets/closed_grievances.png";
-
 import SideBar from "./SideBar";
-
 import { collection, query, where, getDocs } from "firebase/firestore";
-
 import { onAuthStateChanged } from "firebase/auth";
-
 import { auth, db } from "../utils/firebase";
-
+import { useTranslation } from "react-i18next";
 const UserDashboard = () => {
+  const {t}  = useTranslation();
   const [grievances, setGrievances] = useState([]);
 
   const [totalGrievances, setTotalGrievances] = useState(0);
@@ -90,21 +87,21 @@ const UserDashboard = () => {
           <div className="complaints-cards">
             <ComplaintCard
               complaintImage={logo2}
-              complaintFooter="Total Grievances Registered"
+              complaintFooter={t("totalGrievancesRegistered")}
               cardColor="bg-amber-500"
               complaintsCount={totalGrievances}
             />
 
             <ComplaintCard
               complaintImage={logo3}
-              complaintFooter="No. of Grievances Pending"
+              complaintFooter={t("pendingGrievances")}
               cardColor="bg-green-600"
               complaintsCount={openGrievances}
             />
 
             <ComplaintCard
               complaintImage={logo4}
-              complaintFooter="No. of Grievances Closed"
+              complaintFooter={t("closedGrievances")}
               cardColor="bg-red-600"
               complaintsCount={closedGrievances}
             />
