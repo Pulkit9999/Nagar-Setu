@@ -1,7 +1,7 @@
-import React ,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth,db} from "../utils/firebase";
+import { auth, db } from "../utils/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import "../css/SubHeader.css";
 const SubHeader = ({ showWelcome = true }) => {
@@ -31,8 +31,6 @@ const SubHeader = ({ showWelcome = true }) => {
       <select className="language-dropdown">
         <option>English</option>
         <option>हिन्दी</option>
-        <option>Punjabi</option>
-        <option>বাংলা</option>
       </select>
 
       {showWelcome && username ? (
