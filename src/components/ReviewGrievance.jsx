@@ -7,20 +7,23 @@ import { FaSave } from "react-icons/fa";
 import { addDoc, collection, Timestamp, getDoc, doc } from "firebase/firestore";
 import { db, auth } from "../utils/firebase";
 import { generateRegistrationNumber } from "../data/generateRegistrationNumber";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 const ReviewGrievance = () => {
+  const {t} = useTranslation();
   const location = useLocation();
   const grievanceData = location.state;
-  console.log(grievanceData);
+  const navigate = useNavigate();
 
   const handleSubmitGrievance = async () => {
     try {
       const user = auth.currentUser;
-      console.log(user);
+    
       const userDoc = await getDoc(doc(db, "users", user.uid));
       const userData = userDoc.exists() ? userDoc.data() : {};
-
+      const registrationNumber = generateRegistrationNumber();
       const grievanceToSave = {
-        registrationNumber: generateRegistrationNumber(),
+        registrationNumber: registrationNumber,
 
         userId: user.uid,
 
@@ -62,7 +65,8 @@ const ReviewGrievance = () => {
 
       await addDoc(collection(db, "grievances"), grievanceToSave);
 
-      alert("Grievance submitted successfully");
+      alert(t(`${t("grievanceSubmittedSuccessfully")}  Registration Number : ${registrationNumber}` ));
+      navigate("/user-dashboard");
     } catch (error) {
       console.log(error);
 
@@ -75,10 +79,10 @@ const ReviewGrievance = () => {
         <div className="lodge-grievance-layout">
           <SideBar />
           <div className="review-card">
-            <h2 className="review-title">Review Grievance</h2>
+            <h2 className="review-title">{t("enterGrievanceDetails")}</h2>
 
             <div className="review-section">
-              <h3 className="review-label">Information Provided :</h3>
+              <h3 className="review-label">{t("informationProvided")}:</h3>
 
               <div className="grievance-path">
                 <span className="path-item">{grievanceData?.ministry}</span>
@@ -102,7 +106,7 @@ const ReviewGrievance = () => {
             </div>
 
             <div className="review-section">
-              <h3 className="review-label">Grievance Description :</h3>
+              <h3 className="review-label">{t("grievanceDescriptionOnReviewPage")}:</h3>
 
               <div className="description-box">{grievanceData?.remarks}</div>
             </div>
@@ -110,7 +114,7 @@ const ReviewGrievance = () => {
             <div className="submit-wrapper">
               <button className="submit-button" onClick={handleSubmitGrievance}>
                 {" "}
-                <FaSave /> <p>Submit Grievance</p>
+                <FaSave /> <p>{t("submitGrievance")}</p>
               </button>
             </div>
           </div>

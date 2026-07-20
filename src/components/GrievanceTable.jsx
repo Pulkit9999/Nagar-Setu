@@ -13,7 +13,7 @@ import "../css/GrievanceTable.css";
 import { useTranslation } from "react-i18next";
 
 const GrievanceTable = ({ grievances }) => {
-   const {t} = useTranslation();
+   const {t ,i18n} = useTranslation();
   const [globalFilter, setGlobalFilter] = useState("");
 
   const [sorting, setSorting] = useState([]);
@@ -169,7 +169,7 @@ const GrievanceTable = ({ grievances }) => {
 
 
 
-  ],[formatDate]);
+  ],[formatDate, i18n.language]);
 
 
 

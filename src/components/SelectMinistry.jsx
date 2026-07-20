@@ -2,9 +2,10 @@ import React from "react";
 import "../css/SelectMinistry.css";
 import ministryData from "../data/ministryData";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const SelectMinistry = () => {
   const navigate = useNavigate();
-
+  const {t} = useTranslation();
   const handleClick = (item) => {
     // navigate to next page with URL param
     navigate(
@@ -17,7 +18,7 @@ const SelectMinistry = () => {
     <div className="select-ministry-page">
       <div className="select-ministry-card">
         <h2 className="select-ministry-heading">
-          Please select a Ministry/Department/State Government
+          {t("ministryDepartment")}
         </h2>
 
         <div className="ministry-grid">
@@ -44,9 +45,7 @@ const SelectMinistry = () => {
         </div>
 
         <p className="grievance-note2">
-          Note: Nagar Setu is a personal project created for learning and
-          demonstration purposes only. It is not affiliated with any government
-          department.
+          {t("projectDisclaimer")}
         </p>
       </div>
     </div>

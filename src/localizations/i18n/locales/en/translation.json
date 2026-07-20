@@ -28,6 +28,7 @@
   "registrationNumber": "Registration Number",
   "receivedDate": "Received Date",
   "grievanceDescription": "Grievance Description",
+  "ministryDepartments":"मंत्रालय / विभाग",
   "status": "Status",
   "registrationSignUpForm" :"Registration / Sign Up Form",
   "enterYourDetails":"Enter your details",
@@ -81,6 +82,7 @@
   "fieldRequired": "This field is required",
   "remarksRequired": "Remarks are required",
   "dda": "DDA (Delhi Development Authority)",
+  "grievanceDescriptionOnReviewPage" : "Grievance Description",
   "principalAccountsOffice": "Principal Accounts Office",
   "selectNextLevelCategory": "Select Next Level Category",
   "landRelated": "Land Related",
@@ -99,7 +101,7 @@
   "enterGrievanceDetails": "Enter grievance details",
   "informationProvided": "Information Provided",
   "submitGrievance": "Submit Grievance",
-  "grievanceSubmitted": "Grievance submitted successfully",
+  "grievanceSubmittedSuccessfully": "Grievance submitted successfully",
   "speakGrievance": "Speak your grievance",
   "aiChatbot": "AI Chatbot",
   "samadhanDidi": "Samadhan Didi",
@@ -109,4 +111,5 @@
   "portalCompatibility" : "Portal is Compatible with all major Browsers like Google Chrome / Mozilla Firefox/Microsoft Edge/Safari etc.",
   "bestViewedIn":"Best Viewed in 1440 x 900 resolution",
   "English":"English"
+ 
 }

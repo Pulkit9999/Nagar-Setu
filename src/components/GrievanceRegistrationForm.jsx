@@ -29,7 +29,9 @@ import SideBar from "../components/SideBar";
 import "../css/GrievanceRegistrationForm.css";
 import { grievanceRegistrationFormData } from "../data/grievanceRegistrationFormData";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const GrievanceRegistrationForm = () => {
+  const {t} = useTranslation();
   const { ministry } = useParams();
   const selectedMinistry = decodeURIComponent(ministry || "");
   const navigate = useNavigate();
@@ -98,7 +100,7 @@ const GrievanceRegistrationForm = () => {
 
         <div className="grievance-registration-container">
           <h2 className="grievance-registration-heading">
-            Grievance Registration Form
+            {t("grievanceRegistrationForm")}
           </h2>
 
           <p className="mandatory-message">
@@ -110,7 +112,7 @@ const GrievanceRegistrationForm = () => {
             {/* Ministry */}
 
             <div className="form-row">
-              <label className="form-label">Ministry / Department</label>
+              <label className="form-label">{t("ministryDepartments")}</label>
 
               <input
                 type="text"
@@ -124,7 +126,7 @@ const GrievanceRegistrationForm = () => {
 
             <div className="form-row">
               <label className="form-label">
-                Select Main Category
+                {t("selectMainCategory")}
                 <span className="required"> *</span>
               </label>
 
@@ -135,7 +137,7 @@ const GrievanceRegistrationForm = () => {
                   required: "This field is required",
                 })}
               >
-                <option value="">Select Main Category</option>
+                <option value="">{t("selectMainCategory")}</option>
 
                 {Object.keys(grievanceRegistrationFormData).map((category) => (
                   <option key={category} value={category}>
@@ -155,7 +157,7 @@ const GrievanceRegistrationForm = () => {
               <>
                 <div className="form-row">
                   <label className="form-label">
-                    Select Next Level Category
+                    {t("selectNextLevelCategory")}
                     <span className="required"> *</span>
                   </label>
 
@@ -166,7 +168,7 @@ const GrievanceRegistrationForm = () => {
                       required: "This field is required",
                     })}
                   >
-                    <option value="">Select Category</option>
+                    <option value="en">{t("selectCategory")}</option>
 
                     {levelOneOptions.map((item) => (
                       <option key={item} value={item}>
@@ -190,7 +192,7 @@ const GrievanceRegistrationForm = () => {
               <>
                 <div className="form-row">
                   <label className="form-label">
-                    Select Next Level Category
+                    {t("selectNextLevelCategory")}
                     <span className="required"> *</span>
                   </label>
 
@@ -201,7 +203,7 @@ const GrievanceRegistrationForm = () => {
                       required: "This field is required",
                     })}
                   >
-                    <option value="">Select Category</option>
+                    <option value="">{t("selectCategory")}</option>
 
                     {levelTwoOptions.map((item) => (
                       <option key={item} value={item}>
@@ -219,16 +221,11 @@ const GrievanceRegistrationForm = () => {
               </>
             )}
 
-            {/* ===========================
-                Dynamic Fields Start Here
-                (Part 2 continues)
-            =========================== */}
+           
 
             {/* ---------------- Dynamic Fields ---------------- */}
 
-            {/* ===========================
-                Dynamic Fields
-            =========================== */}
+          
 
             {dynamicFields.length > 0 && (
               <>
@@ -300,7 +297,7 @@ const GrievanceRegistrationForm = () => {
 
             <div className="form-row">
               <label className="form-label">
-                Remarks
+                {t("remarks")}
                 <span className="required"> *</span>
               </label>
 
@@ -333,11 +330,11 @@ const GrievanceRegistrationForm = () => {
                 className="reset-button"
                 onClick={() => window.location.reload()}
               >
-                Reset
+                {t("reset")}
               </button>
 
               <button type="submit" className="submit-button">
-                Next
+                {t("next")}
               </button>
             </div>
           </form>

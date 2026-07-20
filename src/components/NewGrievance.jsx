@@ -4,7 +4,10 @@ import SideBar from "../components/SideBar";
 import { FaArrowRight } from "react-icons/fa6";
 import "../css/NewGrievance.css";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 const NewGrievance = () => {
+  const {t} = useTranslation();
   const [accepted, setAccepted] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = () => {
@@ -23,7 +26,7 @@ const NewGrievance = () => {
           <div className="new-grievance-page">
             <div className="new-grievance-card">
               <h2 className="new-grievance-title">
-                Grievance terms and conditions
+                {t("grievanceTerms")}
               </h2>
 
               <h3 className="new-grievance-subtitle">
@@ -31,24 +34,19 @@ const NewGrievance = () => {
               </h3>
 
               <ul className="grievance-list">
-                <li>RTI Matters</li>
+                <li>{t("rtiMatters")}</li>
 
-                <li>Court related / Subjudice matters</li>
+                <li>{t("courtMatters")}</li>
 
-                <li>Religious matters</li>
+                <li>{t("religiousMatters")}</li>
 
                 <li>
-                  Grievances of Government employees concerning their service
-                  matters including disciplinary proceedings etc. unless the
-                  aggrieved employee has already exhausted the prescribed
-                  channels .
+                  {t("serviceMattersDescription")}
                 </li>
               </ul>
 
               <div className="grievance-note">
-                Please use Lodge Pension Grievance option if your grievance is
-                regarding pension issues pertaining to any ministry/department
-                of Government of India.
+               {t("pensionGrievanceNote")}
               </div>
 
               <label className="undertaking-container">
@@ -59,20 +57,17 @@ const NewGrievance = () => {
                 />
 
                 <span>
-                  I agree that my grievance does not fall in any of the above
-                  listed categories
+                 {t("agreementText")}
                 </span>
               </label>
 
               <div className="submit-btn-container">
                 <button className="grievance-submit-btn" onClick={handleSubmit}>
-                  Submit <FaArrowRight />
+                  {t("submit")}<FaArrowRight />
                 </button>
               </div>
               <p className="grievance-note2">
-                Note: Nagar Setu is a personal project created for learning and
-                demonstration purposes only. It is not affiliated with any
-                government department.
+               {t("projectDisclaimer")}
               </p>
             </div>
           </div>
