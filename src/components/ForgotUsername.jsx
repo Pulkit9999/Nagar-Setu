@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MainLayout from "../layouts/MainLayout";
 import "../css/ForgotUsername.css";
-
+import { useTranslation } from "react-i18next";
 import {
   RecaptchaVerifier,
   signInWithPhoneNumber,
@@ -13,6 +13,7 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { auth, db } from "../utils/firebase";
 
 const ForgotUsername = () => {
+  const {t} = useTranslation();
   const [mobileNumber, setMobileNumber] = useState("");
 
   const [otpSent, setOtpSent] = useState(false);
@@ -133,7 +134,7 @@ const ForgotUsername = () => {
 
       setUsername(userData.email);
 
-      alert("OTP Verified Successfully");
+      alert(t("otpVerifiedSuccessfully"));
 
       // Logout temporary phone auth session
 
@@ -151,8 +152,7 @@ const ForgotUsername = () => {
     <MainLayout>
       <div className="forgot-username-main-container">
         <h1 className="forgot-username-heading">
-          Here , you can set your username. Remember this username as it will be
-          used to log you in.
+          {t("forgotEmailHeading")}
         </h1>
 
         <hr />
@@ -161,7 +161,7 @@ const ForgotUsername = () => {
           <>
             <div className="label-and-textfield">
               <label className="label-mobile">
-                Enter Registered Mobile Number{" "}
+               {t("enterRegisteredMobileNumber")}
                 <span className="asterisk-mobile">*</span>
               </label>
 
@@ -176,7 +176,7 @@ const ForgotUsername = () => {
 
             <div className="sb-btn">
               <button onClick={sendOTP} disabled={loading}>
-                {loading ? "Sending..." : "Send OTP"}
+                {loading ? `${t("sendingOTP")}` : `${t("sendOTP")}`}
               </button>
 
               <div id="recaptcha-container"></div>
@@ -185,7 +185,7 @@ const ForgotUsername = () => {
         ) : (
           <>
             <div className="label-and-textfield">
-              <label className="label-mobile">Enter OTP</label>
+              <label className="label-mobile">{t("enterOTP")}</label>
 
               <input
                 id="otp-textfield"
@@ -198,7 +198,7 @@ const ForgotUsername = () => {
 
             <div className="sb-btn">
               <button onClick={verifyOTP} disabled={loading}>
-                {loading ? "Verifying..." : "Verify OTP"}
+                {loading ? `${t("verifyingOTP")}` : `${t("verifyOTP")}`}
               </button>
             </div>
           </>
@@ -206,7 +206,7 @@ const ForgotUsername = () => {
 
         {username && (
           <div className="username-result">
-            Your Email :
+            {t("yourEmail")} :
             <strong className="username-registered">{username}</strong>
           </div>
         )}

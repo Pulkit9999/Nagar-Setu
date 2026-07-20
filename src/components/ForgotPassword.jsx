@@ -3,12 +3,13 @@ import MainLayout from "../layouts/MainLayout";
 import "../css/ForgetPassword.css"
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useTranslation } from "react-i18next";
 const ForgotPassword = () => {
-
+  const {t} = useTranslation();
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
- 
+  
   const handleSubmit = async (e) => {
 
   e.preventDefault();
@@ -75,11 +76,11 @@ const ForgotPassword = () => {
         <div className="forgot-password-card">
 
           <h2 className="forgot-password-heading">
-            Forgot Password
+            {t("forgotPassword")}
           </h2>
 
           <p className="forgot-password-description">
-            Enter your registered email address to reset your password.
+          {t("resetPassword")}
           </p>
 
 
@@ -88,7 +89,7 @@ const ForgotPassword = () => {
             <div className="form-group">
 
               <label htmlFor="email">
-                Registered Email ID
+              {t("registeredEmailId")}
               </label>
 
               <input
@@ -113,13 +114,13 @@ const ForgotPassword = () => {
               type="submit"
               className="reset-password-btn"
             >
-              Send Reset Link
+              {t("sendResetLink")}
             </button>
 
 {
  successMessage && (
    <p className="success-message">
-      {successMessage}
+      {t("passwordResetLinkSent")}
    </p>
  )
 }

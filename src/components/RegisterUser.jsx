@@ -9,6 +9,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import i18n from "../localizations/i18n";
+import { useNavigate } from "react-router-dom";
 const RegisterUser = () => {
   const {t}  = useTranslation();
   const {
