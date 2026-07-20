@@ -13,7 +13,7 @@ The users will be available to lodge a complaint ,  view the  "Total Lodged Comp
 - React Hook Form
 - TanStack React Table
 
-############SCREENSHOTS OF NAGAR SETU #######################
+############ SCREENSHOTS OF NAGAR SETU #######################
 # Login Screen
 ![Login Screen](./screenshots/Login-Screen.PNG)
 # Home Screen
