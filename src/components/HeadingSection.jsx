@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/HeadingSection.css";
-import logo from "../assets/logo-preamble.png";
+import logo from "../assets/Nagar-Setu-Navbar-Image.png";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";

@@ -1,5 +1,4 @@
 import React ,{useState,useEffect} from "react";
-import logo from "../assets/login-button.png";
 import { Link } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth,db} from "../utils/firebase";

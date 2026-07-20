@@ -5,7 +5,7 @@
 }
 
 .img-logo {
-  @apply flex flex-row w-70 h-20 mt-2 mb-2 ml-3;
+  @apply flex flex-row w-70 h-30 mt-1 mb-2 ml-3;
 }
 .text-color {
   @apply text-white text-center mt-1 rounded-2xl bg-blue-950 font-bold p-3 w-34;
