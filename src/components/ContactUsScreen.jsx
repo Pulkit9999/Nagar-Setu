@@ -4,25 +4,25 @@ import "../css/ContactUsScreen.css";
 const officers = [
   {
     sno: 1,
-    name: "Shri Mukul Dixit",
-    designation: "Under Secretary (Public)",
-    grievance: "Prime Minister Office",
-    phone: "23014155",
+    name: "Officer 1 (Being just a demo project)",
+    designation: "Designation 1 (Being just a demo project)",
+    grievance: "-",
+    phone: "-",
     fax: "-",
   },
   {
     sno: 2,
-    name: "",
-    designation: "Joint Secretary",
-    grievance: "Cabinet Secretariat",
-    phone: "23743139",
+    name: "Officer 2 (Being just a demo project)",
+    designation: "Designation 2 (Being just a demo project)",
+    grievance: "-",
+    phone: "-",
     fax: "-",
   },    
   {
     sno: 3,
-    name: "Shri J.G. Subramanian",
-    designation: "Deputy Secretary (Admn, Estt. & Transport)",
-    grievance: "President's Secretariat",
+    name: "Officer 3 (Being just a demo project)",
+    designation: "Designation 3 (Being just a demo project)",
+    grievance: "-",
     phone: "--",
     fax: "-",
   },
@@ -89,30 +89,28 @@ const ContactUs = () => {
             <div className="contact-info-section">
 
               <p>
-                Director of Public Grievances, The Department of
-                Administrative Reforms and Public Grievances.
+                Director of  Grievances
               </p>
 
-              <h4>Sardendu Kr Pandey</h4>
+              <h4>ABC (Being just a demo project)</h4>
 
               <p>Director</p>
 
-              <p>23401455</p>
+              <p>434321</p>
 
             </div>
 
             <div className="contact-info-section">
 
               <p>
-                Head of the Department, The Department of
-                Administrative Reforms and Public Grievances.
+                Head of the Department
               </p>
 
-              <h4>Nivedita Shukla Verma</h4>
+              <h4>XYZ (Being just a demo project)</h4>
 
               <p>Secretary</p>
 
-              <p>23742133</p>
+              <p>434321</p>
 
             </div>
 

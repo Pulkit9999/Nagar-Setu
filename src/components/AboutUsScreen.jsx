@@ -9,28 +9,28 @@ const AboutUs = () => {
           <h1 className="about-us-heading">About Us</h1>
           <div className="about-us-content">
             <p>
-              Director of Public Grievances,{" "}
+              Director , {}
               <strong>
-                The Department of Administrative Reforms and Public Grievances
+                XYZ Department
               </strong>
-              , is the nodal agency to formulate policy guidelines for
+              , is the primary  agency to formulate policy guidelines for
               citizen-centric governance in the country. Redress of citizen's
               grievances, being one of the most important initiatives of the
-              department, DAR&amp;PG formulates public grievance redress
+              department, this department  formulates public grievance redressal
               mechanisms for effective and timely redress / settlement of
               citizen's grievances.
             </p>
 
             <p>
-              The DAR&amp;PG has been making endeavors to bring excellence in
+              The department has been making endeavors to bring excellence in
               public service delivery and to redress grievances of citizens in a
               meaningful manner by effectively coordinating with different
-              Ministries and Departments of the Government and trying to
+              Ministries and Departments ,  trying to
               eliminate the causes of grievances.
             </p>
 
             <p>
-              This is a Government of India Portal aimed at providing the
+              This portal is aimed at providing the
               citizens with a platform for redress of their grievances. If you
               have any grievance against any Government organization in the
               country, you may lodge your grievance here which will go to the
@@ -39,7 +39,7 @@ const AboutUs = () => {
             </p>
 
             <p>
-              Department of Administrative Reforms and Public Grievances (DARPG)
+              Department 
               has signed a memorandum of understanding for developing Artificial
               Intelligence Machine Learning techniques apart from other New
               Generation technologies to analyse public grievances.
@@ -47,9 +47,9 @@ const AboutUs = () => {
 
             <p>
               Presently, in addition to flagging urgent grievances using
-              Artificial Intelligence, the Intelligent Grievance Management
-              System (IGMS) deployed by DARPG in CPGRAMS also functions as a
-              module within CPGRAMS 7.0 and performs the following functions:
+              Artificial Intelligence, the  Grievance System 
+               deployed also functions as a
+              module and performs the following functions:
             </p>
 
             <ul className="about-us-list">
@@ -72,20 +72,19 @@ const AboutUs = () => {
             </ul>
 
             <p className="about-us-contact-heading">
-              Any query/comments/discrepancies may be communicated to Department
-              of Administrative Reforms &amp; Public Grievances as per the
+              Any query/comments/discrepancies may be communicated to the department
+                as per the
               following Contact Address:
             </p>
 
             <div className="about-us-contact">
-              <p>Parthasarthy Bhaskar</p>
-              <p>Director (PG)</p>
+              <p>ABC (Being just a demo project)</p>
+              <p>Director</p>
               <p>
-                The Department of Administrative Reforms and Public Grievances,
-                Sardar Patel Bhawan
+                Department - XYZ (Being just a demo project)
               </p>
-              <p>Parliament Street, New Delhi 110001</p>
-              <p>23440439</p>
+              <p>PQR Street (Being just a demo project)</p>
+              <p>434321 </p>
 
               <p className="about-us-disclaimer">
                 Note: Nagar Setu is a personal project created for learning and

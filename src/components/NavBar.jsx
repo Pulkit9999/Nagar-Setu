@@ -13,8 +13,8 @@ const Navbar = () => {
         <div className="gov-navbar__divider" />
 
         <div className="gov-navbar__ministry">
-          <span>कार्मिक, लोक शिकायत और पेंशन मंत्रालय</span>
-          <span>Ministry of Personnel, Public Grievances & Pensions</span>
+          <span>एबीसी मंत्रालय </span>
+          <span> ABC Department (Being just a demo project)</span>
         </div>
       </div>
 
