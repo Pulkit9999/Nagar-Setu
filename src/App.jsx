@@ -1,26 +1,26 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SplashScreen from "./components/SplashScreen";
-import RegisterUser from "./components/RegisterUser";
-import HomeScreen from "./components/HomeScreen";
-import AboutUs from "./components/AboutUsScreen";
+import RegisterUser from "./pages/RegisterUser";
+import HomeScreen from "./pages/HomeScreen";
+import AboutUs from "./pages/AboutUsScreen";
 import { Contact } from "lucide-react";
-import ContactUs from "./components/ContactUsScreen";
-import FAQs from "./components/FAQsScreen";
-import DisclaimerSection from "./components/Disclaimer";
-import WebsitePolicies from "./components/WebsitePolicies";
-import Login from "./components/Login";
+import ContactUs from "./pages/ContactUsScreen";
+import FAQs from "./pages/FAQsScreen";
+import DisclaimerSection from "./pages/Disclaimer";
+import WebsitePolicies from "./pages/WebsitePolicies";
+import Login from "./pages/Login";
 import { ToastContainer } from "react-toastify";
-import UserDashboard from "./components/UserDashboard";
-import NewGrievance from "./components/NewGrievance";
-import SelectMinistryPage from "./components/SelectMinistryPage";
+import UserDashboard from "./pages/UserDashboard";
+import NewGrievance from "./pages/NewGrievance";
+import SelectMinistryPage from "./pages/SelectMinistryPage";
 import GrievanceRegistrationForm from "./components/GrievanceRegistrationForm";
-import ReviewGrievance from "./components/ReviewGrievance";
+import ReviewGrievance from "./pages/ReviewGrievance";
 
 import ProtectedRoute from "./components/ProtectedRoutes";
 import PublicRoute from "./components/PublicRoutes";
-import ForgotUsername from "./components/ForgotUsername";
-import ForgotPassword from "./components/ForgotPassword";
-import EditProfile from "./components/EditProfile";
+import ForgotUsername from "./pages/ForgotUsername";
+import ForgotPassword from "./pages/ForgotPassword";
+import EditProfile from "./pages/EditProfile";
 function App() {
   return (
     <BrowserRouter>

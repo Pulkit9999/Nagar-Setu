@@ -2,7 +2,7 @@
 
 import MainLayout from "../layouts/MainLayout";
 import Sidebar from "../components/Sidebar";
-import SelectMinistry from "../components/SelectMinistry";
+import SelectMinistry from "../pages/SelectMinistry";
 import "../css/SelectMinistryPage.css";
 
 

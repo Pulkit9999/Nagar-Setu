@@ -4,14 +4,14 @@ import MainLayout from "../layouts/MainLayout";
 
 import "../css/UserDashboard.css";
 
-import ComplaintCard from "./ComplaintCard";
+import ComplaintCard from "../components/ComplaintCard";
 
-import GrievanceTable from "./GrievanceTable";
+import GrievanceTable from "../components/GrievanceTable";
 
 import logo2 from "../assets/total_grievances_registered.png";
 import logo3 from "../assets/pending_grievances.png";
 import logo4 from "../assets/closed_grievances.png";
-import SideBar from "./SideBar";
+import SideBar from "../components/SideBar";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "../utils/firebase";
