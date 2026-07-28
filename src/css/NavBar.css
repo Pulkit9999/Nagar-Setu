@@ -1,61 +1,68 @@
 @reference "tailwindcss";
 
 .gov-navbar {
-  @apply flex items-center justify-between
+  @apply flex flex-col sm:flex-row items-center justify-between
          bg-[#7a0048]
          text-white
-         px-6
-         py-1;
+         px-3 sm:px-6
+         py-2 sm:py-1.5 
+         shadow-md w-full max-w-full box-border overflow-hidden gap-1.5 sm:gap-0;
 }
 
 .gov-navbar__left {
-  @apply flex items-center;
+  @apply flex items-center justify-between sm:justify-start w-full sm:w-auto box-border;
 }
 
 .gov-navbar__india {
-  @apply flex flex-col
-         text-center gap-0.5;
+  @apply flex flex-col text-center sm:text-left gap-0.5;
 }
 
-.gov-navbar__india span:first-child {
-  @apply text-[12px] font-semibold;
+.gov-navbar__india-primary {
+  @apply text-[10px] sm:text-[12px] font-semibold whitespace-nowrap;
 }
 
-.gov-navbar__india span:last-child {
-  @apply text-[11px];
+.gov-navbar__india-secondary {
+  @apply text-[9px] sm:text-[11px] whitespace-nowrap;
 }
 
 .gov-navbar__divider {
   @apply w-px
-         h-8
-         bg-white/50
-         mx-4;
+         h-6 sm:h-8
+         bg-white/40
+         mx-2 sm:mx-4;
 }
 
 .gov-navbar__ministry {
-  @apply flex flex-col gap-0.5;
+  @apply flex flex-col gap-0.5 text-right sm:text-left;
 }
 
-.gov-navbar__ministry span:first-child {
-  @apply text-[12px] font-medium;
+.gov-navbar__ministry-primary {
+  @apply text-[10px] sm:text-[12px] font-medium truncate max-w-[130px] sm:max-w-none;
 }
 
-.gov-navbar__ministry span:last-child {
-  @apply text-[11px];
+.gov-navbar__ministry-secondary {
+  @apply text-[9px] sm:text-[11px] truncate max-w-[130px] sm:max-w-none;
 }
 
 .gov-navbar__right {
-  @apply flex items-center;
+  @apply flex items-center justify-between sm:justify-end w-full sm:w-auto 
+         border-t border-white/20 sm:border-t-0 pt-1.5 sm:pt-0 box-border;
 }
 
 .nav-link {
-  @apply flex items-center gap-1
-         px-4
-         text-sm
+  @apply flex items-center justify-center sm:justify-start gap-1
+         flex-1 sm:flex-initial
+         px-1 sm:px-3
+         py-1
+         text-[11px] sm:text-sm
          border-l
          border-white/40
          hover:bg-white/10
-         transition;
+         transition box-border;
+}
+
+.nav-link-text {
+  @apply inline truncate;
 }
 
 .nav-link:first-child {
