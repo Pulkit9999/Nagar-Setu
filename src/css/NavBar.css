@@ -6,7 +6,7 @@
          text-white
          px-3 sm:px-6
          py-2 sm:py-1.5 
-         shadow-md w-full max-w-full box-border overflow-hidden gap-1.5 sm:gap-0;
+         shadow-md w-full box-border overflow-hidden gap-1.5 sm:gap-0 max-w-full;
 }
 
 .gov-navbar__left {

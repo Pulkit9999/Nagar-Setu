@@ -6,5 +6,5 @@
   @apply fixed bottom-0;
 }
 .banner-image {
-  @apply w-full;
+  @apply relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen sm:static sm:mx-0 sm:w-full h-auto max-h-[calc(100vh-80px)] sm:max-h-[calc(100vh-200px)] object-cover block mx-auto my-auto;
 }
